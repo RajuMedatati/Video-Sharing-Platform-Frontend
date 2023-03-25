@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family:'Open-Sans',sans-serif;
+    color: #343a4a;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 80px;
+}
+input{
+    padding: 20px;
+
+}
+.dropzone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    padding: 20px;
+}
+button{
+    padding: 12px;
+    font-size: medium;
+}
+.upload-card{
+    width: 500px;
+    height: 470px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    background-color: #000000;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+h1{
+    color: white;
+    font-size: bold;
+    font-size: 21px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.drag{
+    width: 100%;
+    min-height: 30%;
+    border: 1px solid #4B4B5F;
+    text-align: center;
+    padding: 10px;
+    background-color: #4B4B5F;
+   
+}
+img{
+    background-color: #FFFFFF;
+}
+.flex{
+    display: flex;
+}
+.below{
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h2,p{
+    margin-bottom: 8px;
+}
+.save{
+    margin-left: 42.5%;
+}
