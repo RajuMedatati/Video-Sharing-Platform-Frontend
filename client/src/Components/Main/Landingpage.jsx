@@ -1,7 +1,8 @@
+import Navbar from "./Navbar/Navbar.jsx";
 const Home=()=>{
     return(
         <>
-        I am from Home
+        <Navbar/>
         </>
     )
 }
