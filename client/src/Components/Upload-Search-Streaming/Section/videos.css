@@ -1,0 +1,16 @@
+.videos{
+    flex-direction: column;
+    display:flex;
+    justify-content:space-evenly;
+    gap:5px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    width: 100%;
+} 
+ .videos-section{
+    background-color: #0F121FF5;
+    height: 87vh;
+    width:  100%;
+}  
