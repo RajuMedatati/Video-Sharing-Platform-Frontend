@@ -81,6 +81,10 @@ img{
 
     cursor: pointer; 
 }
+.sec-second form input.submit:hover{
+    background-color: black;
+    color:white;
+}
 .register form{
     margin-top: 10px;
 }

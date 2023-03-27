@@ -21,7 +21,7 @@ function SingIn(){
 
         axios.post("http://localhost:8080/signin",{email,password})
         .then((res)=>{
-            //  const token=res.data.data;
+            console.log(res.data.data);
             // console.log(token);
             
             localStorage.setItem("ranjit","mera name")
