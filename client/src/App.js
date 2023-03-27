@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import Singin from './Components/Sign-Register/Signin.jsx';
 import Home from './Components/Main/Landingpage.jsx';
