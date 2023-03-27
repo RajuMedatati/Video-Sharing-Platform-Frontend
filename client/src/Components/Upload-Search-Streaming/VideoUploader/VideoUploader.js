@@ -73,17 +73,3 @@ function VideoUploader(){
     </>
 }
 export default VideoUploader
-
-
-    // {
-    //     title: { type: String, required: true },
-    // fileName: { type: String, required: true },
-    // description: { type: String, required: true },
-    // contentType: { type: String, required: true },
-    // views: { type: Number, default: 0 },
-    // publisherName: { type: String, required: true },
-    // category: { type: String, required: true },
-    // visibility: { type: String, required: true, default: “Public” },
-    // user_id: { type: mongoose.Types.ObjectId, reference: "User" },
-    //     },     { timestamps: true }
-    

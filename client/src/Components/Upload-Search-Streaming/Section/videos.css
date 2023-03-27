@@ -9,8 +9,11 @@
     padding-top: 20px;
     width: 100%;
 } 
- .videos-section{
+ /* .videos-section{
     background-color: #0F121FF5;
-    height: 87vh;
+    height: 100%;
     width:  100%;
-}  
+}   */
+body{
+    background-color: #0F121FF5;
+}
