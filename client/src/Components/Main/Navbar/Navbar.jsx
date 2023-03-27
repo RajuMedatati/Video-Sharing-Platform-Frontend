@@ -7,6 +7,7 @@ function Navbar() {
     const [toggle,setToggle] = useState(true)
   const navigateResgister = useNavigate();
   const navigateSignIn = useNavigate();
+  
   return (<>
   {!toggle?
     <nav>

@@ -1,10 +1,70 @@
 import './Style.css'
-import React from 'react';
+import axios from "axios"
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 
 
 function SingIn(){
     const navigate = useNavigate();
+    const navigate1=useNavigate();
+    const [email,setEmail]=useState("")
+    const [password,setPassword]=useState("");
+
+    const loginuser=async (e)=>{
+        e.preventDefault();
+
+        // const formData=new FormData();
+        // formData.append("email",email);
+
+        // formData.append("password",password);
+
+        axios.post("http://localhost:8080/signin",{email,password})
+        .then((res)=>{
+            //  const token=res.data.data;
+            // console.log(token);
+            
+            localStorage.setItem("ranjit","mera name")
+            localStorage.setItem("mytoken",res.data.data);
+            window.alert("login sucesfull")
+            navigate1("/");
+        }).catch((err)=>{
+            console.log(err)
+            window.alert("invalid credentials")
+
+        })
+
+        
+
+        // const res=await fetch("/signin",{
+        //     method:"POST",
+        //     headers:{
+        //         "Content-Type":"application/json"
+        //     },
+        //     body:JSON.stringify({
+        //         email,
+        //         password
+
+        //     })
+        // });
+          
+        // console.log(res)
+        // if(res.status==400 ){
+        //     window.alert("invalid crendetials")
+            
+
+
+        // }
+        // else{
+          
+        //     // localStorage.setItem("jwtoken",res.data.token);
+        //     window.alert("login succesfull")
+        //     navigate1("/")
+           
+        // }
+
+        
+    }
     return (<>
         <main>
             <section className="sec-first">
@@ -17,12 +77,12 @@ function SingIn(){
                 <button  onClick={() => navigate('/register')}>Register</button>
             </section>
             <section className="sec-second">
-                <form action="#"  className='formdata'>
+                <form  className='formdata' method='POST'>
                     <h1>Sing In</h1>
                     <div>Sing in to continue access pages</div><br />
-                    <input type="email" name="email" id="email" placeholder="Email"/><br />
-                    <input type="password" name="passord" id="password" placeholder="Password"/><br />
-                    <button type="submit">Sing in</button>
+                    <input type="email" name="email" id="email" placeholder="Email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/><br />
+                    <input type="password" name="passord" id="password" placeholder="Password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/><br />
+                    <input  className="submit" type="submit" name="signup" id="signup" value="Signin" onClick={loginuser}></input><br />
                 </form>
             </section>
         </main>
