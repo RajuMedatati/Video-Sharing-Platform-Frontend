@@ -5,7 +5,8 @@ import axios from "axios";
 const Content = () => {
     const [banner, setBanner] = useState("");
     const [name, setName] = useState("View all");
-    const [data, setData] = useState([])
+    const [toggle,setToggle] = useState(false)
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         axios.get("http://localhost:8080/home")
@@ -16,7 +17,10 @@ const Content = () => {
                 window.alert("something went wrong")
 
             })
+
     }, []);
+
+ 
     
     const handleViewButton = () => {
         if (banner) {
@@ -34,22 +38,26 @@ const Content = () => {
    
     return (<>
         <div className={`banner${banner}`}>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7pQUaDV2El5BJe0sxXeLNjwzl2WkwudOkmIuIe94Tcg&s"  alt="img not found"/>
+
+            {!toggle?
+            <img src={data.slice(0,1).map((data)=>{return data.imgUrl})} onClick={()=>setToggle(true)}/>:
+            <video src={data.slice(0,1).map((data)=>{return data.videoUrl})} onClick={()=>setToggle(false)} controls autoPlay/>
+            }
             <div className="details">
-                <h1>hiiiiii</h1>
-                
+                <h1>{data.slice(0,1).map((data)=>{return data.tittle})}</h1>
+
                 <div className="span">
-                    <span>27 March 2023</span>
+                    <span>{data.slice(0,1).map((data)=>{return data.createdAt})}</span>
                     <span>15 mins</span>
                     <span>200 views</span>
                 </div>
 
             </div>
-            {!banner ?
+            {/* {!banner ?
                 <div className="title">
                     <h1>GODZILLA</h1>
 
-                </div> : ""}
+                </div> : ""} */}
 
         </div>
         <div className="video-content">
@@ -63,8 +71,13 @@ const Content = () => {
 
             </div>
             <div className="videos">
+
                 
-                {
+                {!banner? data.slice(0,4).map((data) => {
+                       return <Card data={data} />
+                    }):
+
+
                     data.map((data) => {
                        return <Card data={data} />
                     })
