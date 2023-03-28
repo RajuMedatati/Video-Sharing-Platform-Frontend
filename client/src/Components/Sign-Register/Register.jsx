@@ -48,11 +48,7 @@ const Register=()=>{
    }
 
 
-   
-     
-
-   
-    return(
+  return(
         <>
        <main>
             <section className="sec-first">
