@@ -10,6 +10,8 @@ function Navbar() {
     const [open,setOpen] = useState(false)
   const navigateResgister = useNavigate();
   const navigateSignIn = useNavigate();
+  const nav1 = useNavigate();
+  const nav3 = useNavigate();
   const token=localStorage.getItem("mytoken");
 
 
@@ -30,6 +32,7 @@ function Navbar() {
             window.alert("logout sucessfully")
             localStorage.clear()
             setToggle(false)
+            nav3("/")
             
            }
         }).catch((err)=>{
@@ -38,12 +41,6 @@ function Navbar() {
 
         })
     
-
-
-  
- 
-
-
    }
  
   
@@ -66,7 +63,7 @@ function Navbar() {
         <span className="com-btn">|</span>
         <button className="btn-2 com-btn" onClick={()=>setOpen(true)}>Upload</button>
         <span className="com-btn">|</span>
-        <button className="btn-11 com-btn">My Videos</button>
+        <button className="btn-11 com-btn" onClick={()=>{nav1("/myvideos")}}>My Videos</button>
       </div>
     </nav>
     {open && <Upload setOpen={setOpen}/>}
