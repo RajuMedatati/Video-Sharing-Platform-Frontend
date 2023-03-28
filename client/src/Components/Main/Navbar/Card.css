@@ -3,6 +3,7 @@
     width: 20vw;
     position: relative;
     opacity: 1;
+    box-shadow: 3px 3px 5px grey;
 }
 .card video{
     width: 100%;

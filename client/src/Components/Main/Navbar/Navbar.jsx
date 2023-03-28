@@ -14,6 +14,7 @@ function Navbar() {
   const nav1 = useNavigate();
   const nav2 = useNavigate();
   const nav3 = useNavigate();
+  const nav4 = useNavigate();
   const token=localStorage.getItem("mytoken");
 
 
@@ -50,7 +51,7 @@ function Navbar() {
   {!toggle?
     <nav>
       <div className="Container">
-        <span className="heading">Tuner</span>
+        <span className="heading" onClick={()=>{nav4("/")}}>Tuner</span>
         <input placeholder="Search" className="input" type="text" onChange={(e)=>setQ(e.target.value)}/>
         <div className="search-btn" onClick={()=>nav2(`/search?q=${q}`)}><img src="https://icon-library.com/images/blue-search-icon/blue-search-icon-23.jpg" alt="Search" /></div>
         <button className="btn-2 com-btn" onClick={() => { navigateResgister('/register') }}>Register</button>
@@ -60,7 +61,7 @@ function Navbar() {
     </nav>: <>
     <nav>
       <div className="Container">
-        <span className="heading">Tuner</span>
+        <span className="heading" onClick={()=>{nav4("/")}}>Tuner</span>
         <input placeholder="Search" className="input" type="text" onChange={(e)=>setQ(e.target.value)}/>
         <div  className="search-btn" onClick={()=>nav2(`/search?q=${q}`)}><img src="https://icon-library.com/images/blue-search-icon/blue-search-icon-23.jpg" alt="Search" /></div>
         <button className="btn-3 com-btn" onClick={handleSignout} >Sign out</button>

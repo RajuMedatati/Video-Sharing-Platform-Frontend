@@ -5,7 +5,8 @@ import axios from "axios";
 const Content = () => {
     const [banner, setBanner] = useState("");
     const [name, setName] = useState("View all");
-    const [data, setData] = useState([])
+    const [toggle,setToggle] = useState(false)
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         axios.get("http://localhost:8080/home")
@@ -16,8 +17,8 @@ const Content = () => {
                 window.alert("something went wrong")
 
             })
-    }, []);
-    // console.log(data[0].tittle)
+    },[]);
+    
     const handleViewButton = () => {
         if (banner) {
             setBanner("")
@@ -33,22 +34,24 @@ const Content = () => {
 
     return (<>
         <div className={`banner${banner}`}>
-            <img src="https://rare-gallery.com/mocahbig/396158-wallpaper-godzilla-vs-kong-city-battle-2021-4k.jpg" />
+            {!toggle?
+            <img src={data.slice(0,1).map((data)=>{return data.imgUrl})} onClick={()=>setToggle(true)}/>:
+            <video src={data.slice(0,1).map((data)=>{return data.videoUrl})} onClick={()=>setToggle(false)} controls autoPlay/>
+            }
             <div className="details">
-                <h1>Godzilla</h1>
-                <h1>Attack in the city</h1>
+                <h1>{data.slice(0,1).map((data)=>{return data.tittle})}</h1>
                 <div className="span">
-                    <span>27 March 2023</span>
+                    <span>{data.slice(0,1).map((data)=>{return data.createdAt})}</span>
                     <span>15 mins</span>
                     <span>200 views</span>
                 </div>
 
             </div>
-            {!banner ?
+            {/* {!banner ?
                 <div className="title">
                     <h1>GODZILLA</h1>
 
-                </div> : ""}
+                </div> : ""} */}
 
         </div>
         <div className="video-content">
@@ -62,8 +65,13 @@ const Content = () => {
 
             </div>
             <div className="videos">
+
                 
-                {
+                {!banner? data.slice(0,4).map((data) => {
+                       return <Card data={data} />
+                    }):
+
+
                     data.map((data) => {
                        return <Card data={data} />
                     })

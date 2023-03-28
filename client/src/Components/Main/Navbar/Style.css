@@ -3,6 +3,11 @@
     color: white;
     height: 80px;
     position: relative;
+    border-bottom: 1px solid white;
+    border-style: dashed;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .heading {
@@ -10,7 +15,11 @@
     color: #80accf;
     text-decoration: none;
     margin: 40px 41px 0px 54px;
+    cursor: pointer;
     
+}
+.heading:hover{
+    color: brown;
 }
 
 .input {
@@ -37,14 +46,25 @@
 .btn-2{
     margin-right: 26px;
 }
+.btn-2:hover{
+    background-color: rgb(209, 251, 237);
+    transition: 0.4s;
+    border-radius: 5px;
+    border-style: none;
+    color: blue;
+}
 .btn-3{
     color: rgb(142, 6, 6);
     margin-right: 20px;
     margin-left: 0px;
 }
 .btn-11:hover{
-    color:rgb(197, 47, 247);
-    text-decoration: underline;
+    background-color: rgb(209, 251, 237);
+    transition: 0.4s;
+    border-radius: 5px;
+    border-style: none;
+    color: blue;
+   
 } 
 
 .search-btn{
