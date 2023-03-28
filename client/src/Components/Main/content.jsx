@@ -17,7 +17,7 @@ const Content = () => {
 
             })
     }, []);
-    // console.log(data[0].tittle)
+    
     const handleViewButton = () => {
         if (banner) {
             setBanner("")
@@ -30,13 +30,14 @@ const Content = () => {
             setName("View all")
         }
     }
-
+    console.log(data[1])
+   
     return (<>
         <div className={`banner${banner}`}>
-            <img src="https://rare-gallery.com/mocahbig/396158-wallpaper-godzilla-vs-kong-city-battle-2021-4k.jpg" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7pQUaDV2El5BJe0sxXeLNjwzl2WkwudOkmIuIe94Tcg&s"  alt="img not found"/>
             <div className="details">
-                <h1>Godzilla</h1>
-                <h1>Attack in the city</h1>
+                <h1>hiiiiii</h1>
+                
                 <div className="span">
                     <span>27 March 2023</span>
                     <span>15 mins</span>
