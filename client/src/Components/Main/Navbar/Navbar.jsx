@@ -8,9 +8,11 @@ import axios from "axios";
 function Navbar() {
     const [toggle,setToggle] = useState(false);
     const [open,setOpen] = useState(false)
+    const [q,setQ] = useState("");
   const navigateResgister = useNavigate();
   const navigateSignIn = useNavigate();
   const nav1 = useNavigate();
+  const nav2 = useNavigate();
   const nav3 = useNavigate();
   const token=localStorage.getItem("mytoken");
 
@@ -49,7 +51,8 @@ function Navbar() {
     <nav>
       <div className="Container">
         <span className="heading">Tuner</span>
-        <input placeholder="Search" className="input" type="text" />
+        <input placeholder="Search" className="input" type="text" onChange={(e)=>setQ(e.target.value)}/>
+        <div className="search-btn" onClick={()=>nav2(`/search?q=${q}`)}><img src="https://icon-library.com/images/blue-search-icon/blue-search-icon-23.jpg" alt="Search" /></div>
         <button className="btn-2 com-btn" onClick={() => { navigateResgister('/register') }}>Register</button>
         <span className="com-btn">|</span>
         <button className="btn-1 com-btn" onClick={() => { navigateSignIn('/sign') }}>Login</button>
@@ -58,7 +61,8 @@ function Navbar() {
     <nav>
       <div className="Container">
         <span className="heading">Tuner</span>
-        <input placeholder="Search" className="input" type="text" />
+        <input placeholder="Search" className="input" type="text" onChange={(e)=>setQ(e.target.value)}/>
+        <div  className="search-btn" onClick={()=>nav2(`/search?q=${q}`)}><img src="https://icon-library.com/images/blue-search-icon/blue-search-icon-23.jpg" alt="Search" /></div>
         <button className="btn-3 com-btn" onClick={handleSignout} >Sign out</button>
         <span className="com-btn">|</span>
         <button className="btn-2 com-btn" onClick={()=>setOpen(true)}>Upload</button>
