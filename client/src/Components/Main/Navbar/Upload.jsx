@@ -60,6 +60,7 @@ const Upload = ({ setOpen }) => {
     }, [img]);
 
     const handleUpload = (e)=>{
+
         const newToken = localStorage.getItem("mytoken")
 
         axios.post("http://localhost:8080/upload",{...inputs,newToken})
@@ -71,6 +72,7 @@ const Upload = ({ setOpen }) => {
             window.alert("something went wrong")
  
         })
+
       }
 
     return (
