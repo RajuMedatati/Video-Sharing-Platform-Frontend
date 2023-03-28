@@ -17,7 +17,10 @@ const Content = () => {
                 window.alert("something went wrong")
 
             })
-    },[]);
+
+    }, []);
+
+ 
     
     const handleViewButton = () => {
         if (banner) {
@@ -31,15 +34,18 @@ const Content = () => {
             setName("View all")
         }
     }
-
+    console.log(data[1])
+   
     return (<>
         <div className={`banner${banner}`}>
+
             {!toggle?
             <img src={data.slice(0,1).map((data)=>{return data.imgUrl})} onClick={()=>setToggle(true)}/>:
             <video src={data.slice(0,1).map((data)=>{return data.videoUrl})} onClick={()=>setToggle(false)} controls autoPlay/>
             }
             <div className="details">
                 <h1>{data.slice(0,1).map((data)=>{return data.tittle})}</h1>
+
                 <div className="span">
                     <span>{data.slice(0,1).map((data)=>{return data.createdAt})}</span>
                     <span>15 mins</span>
