@@ -60,23 +60,18 @@ const Upload = ({ setOpen }) => {
     }, [img]);
 
     const handleUpload = (e)=>{
-       const newToken = localStorage.getItem("mytoken")
 
-       axios.post("http://localhost:8080/upload",{...inputs,newToken})
-       .then((res)=>{
-           
-           
-           
-           window.alert("video uploaded sucesfull")
-           setOpen(false)
-       }).catch((err)=>{
-           console.log(err)
-           window.alert("something went wrong")
+        const newToken = localStorage.getItem("mytoken")
 
-       })
-
-
-
+        axios.post("http://localhost:8080/upload",{...inputs,newToken})
+        .then((res)=>{
+            window.alert("video uploaded sucesfully")
+            setOpen(false)
+        }).catch((err)=>{
+            console.log(err)
+            window.alert("something went wrong")
+ 
+        })
 
       }
 

@@ -10,6 +10,7 @@
     color: aliceblue;
     flex-direction: column;
     border-radius: 2%;
+    z-index: 1;
 }
 #wrapper{
     display: flex;
