@@ -34,6 +34,7 @@ const Content = () => {
 
     return (<>
         <div className={`banner${banner}`}>
+      
             {!toggle?
             <img src={data.slice(0,1).map((data)=>{return data.imgUrl})} onClick={()=>setToggle(true)}/>:
             <video src={data.slice(0,1).map((data)=>{return data.videoUrl})} onClick={()=>setToggle(false)} controls autoPlay/>
@@ -47,13 +48,11 @@ const Content = () => {
                 </div>
 
             </div>
-            {/* {!banner ?
-                <div className="title">
-                    <h1>GODZILLA</h1>
-
-                </div> : ""} */}
+           
 
         </div>
+       
+      
         <div className="video-content">
             <div className="btns">
                 <div className="recent">
