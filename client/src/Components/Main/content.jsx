@@ -53,13 +53,11 @@ const Content = () => {
                 </div>
 
             </div>
-            {/* {!banner ?
-                <div className="title">
-                    <h1>GODZILLA</h1>
-
-                </div> : ""} */}
+           
 
         </div>
+       
+      
         <div className="video-content">
             <div className="btns">
                 <div className="recent">
