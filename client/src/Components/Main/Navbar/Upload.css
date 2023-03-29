@@ -1,16 +1,17 @@
 #container{
-    width: 750px;
-    height:600px;
+    width: 550px;
+    height:520px;
     position: absolute;
     top: 0;
     left: 0;
     background-color:black;
     display: flex;
-    margin:8% 25%;
+    margin:8% 30%;
     color: aliceblue;
     flex-direction: column;
     border-radius: 2%;
     z-index: 1;
+    box-shadow: 2px 2px 3px blue;
 }
 #wrapper{
     display: flex;
@@ -22,8 +23,23 @@ h2{
 }
 #close{
     margin-right: 3%;
-    margin-top: 3%;
+    margin-top: 2%;
     font-size: 20px;
+    cursor: pointer;
+    color:white;
+    opacity:0.8;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:red;
+    border-radius: 50%;
+   
+    width:30px;
+}
+#close:hover{
+    opacity: 1;
 }
 #video-input{
     border: 1px solid gray;
@@ -90,7 +106,8 @@ h1{
     width: 8rem;
     margin-left: 41%;
     cursor: pointer;
-    margin-top: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: large;
     background-color: rgb(196, 135, 253);
     color: white;

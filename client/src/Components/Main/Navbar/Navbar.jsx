@@ -51,24 +51,29 @@ function Navbar() {
   {!toggle?
     <nav>
       <div className="Container">
-        <span className="heading" onClick={()=>{nav4("/")}}>Tuner</span>
-        <input placeholder="Search" className="input" type="text" onChange={(e)=>setQ(e.target.value)}/>
-        <div className="search-btn" onClick={()=>nav2(`/search?q=${q}`)}><img src="https://icon-library.com/images/blue-search-icon/blue-search-icon-23.jpg" alt="Search" /></div>
-        <button className="btn-2 com-btn" onClick={() => { navigateResgister('/register') }}>Register</button>
-        <span className="com-btn">|</span>
-        <button className="btn-1 com-btn" onClick={() => { navigateSignIn('/sign') }}>Login</button>
+        <h1 className="heading" onClick={()=>{nav4("/")}} >Tuner</h1>
+        <div> <input placeholder="Search" className="input" type="text" onChange={(e)=>setQ(e.target.value)}/></div>
+        <div className="search-btn1" onClick={()=>nav2(`/search?q=${q}`)}><img src="https://icon-library.com/images/blue-search-icon/blue-search-icon-23.jpg" alt="Search" /></div>
+        <div className="btn-1" onClick={() => { navigateSignIn('/sign') }}>Login</div>
+        <div className="com-btn">|</div>
+        <div className="btn-2" onClick={() => { navigateResgister('/register') }} > Register</div>
+        
       </div>
     </nav>: <>
     <nav>
       <div className="Container">
-        <span className="heading" onClick={()=>{nav4("/")}}>Tuner</span>
-        <input placeholder="Search" className="input" type="text" onChange={(e)=>setQ(e.target.value)}/>
+        <h1 className="heading" onClick={()=>{nav4("/")}}>Tuner</h1>
+       <div> <input placeholder="Search" className="input1" type="text" onChange={(e)=>setQ(e.target.value)}/></div>
         <div  className="search-btn" onClick={()=>nav2(`/search?q=${q}`)}><img src="https://icon-library.com/images/blue-search-icon/blue-search-icon-23.jpg" alt="Search" /></div>
-        <button className="btn-3 com-btn" onClick={handleSignout} >Sign out</button>
+        <div className="btn-3" onClick={()=>{nav1("/myvideos")}}>My Videos</div>
+        <div className="com-btn">|</div>
+       
+        <div className="btn-4" onClick={()=>setOpen(true)}>Upload</div>
+        
         <span className="com-btn">|</span>
-        <button className="btn-2 com-btn" onClick={()=>setOpen(true)}>Upload</button>
-        <span className="com-btn">|</span>
-        <button className="btn-11 com-btn" onClick={()=>{nav1("/myvideos")}}>My Videos</button>
+        <div className="btn-5" onClick={handleSignout} >Sign out</div>
+       
+       
       </div>
     </nav>
     {open && <Upload setOpen={setOpen}/>}
