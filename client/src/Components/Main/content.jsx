@@ -9,7 +9,7 @@ const Content = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/home")
+        axios.get("https://video-sharing-backend.onrender.com/home")
             .then((res) => {
                 setData(res.data)
             }).catch((err) => {

@@ -26,7 +26,7 @@ const Register=()=>{
     e.preventDefault();
     const {name,email,phone,profession,password,cpassword}=user;
 
-    const res=await fetch("http://localhost:8080/register",{
+    const res=await fetch("https://video-sharing-backend.onrender.com/register",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"

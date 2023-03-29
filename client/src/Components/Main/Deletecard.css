@@ -7,15 +7,18 @@
     top:10.6%;
     flex-direction: column;
     gap: 3%;
+  
 }
 #photo{
+   
     height: 27%;
     width: 100%;
     
 }
 #photo img{
     height: 100%;
-    width:100%
+    width:100%;
+
 }
 #photo-name{
     width: 100%;
