@@ -1,27 +1,22 @@
 import React from "react"
-import Deletecard from "./Deletecard"
-import { useState } from "react"
 import"./Myvideos.css"
-const Myvideocard = ({data})=> {
-    const [toggle,setToggle] = useState(false)
-    const handleOnOff = () =>{
-        if(!toggle){
-            setToggle(true)
-        }else{
-            setToggle(false)
-        }
+const Myvideocard = ({data,setToggle,setData1,setVisible,setCard,card})=> {
+    const handleEvery= ()=>{
+        setData1(data);
+        setToggle(true);
+        setVisible("ri");
+        setCard("1")
     }
   return (
-    <>{!toggle?
-    <div className='my-video-card'>
+    <>
+    <div className={`my-video-card${card}`} onClick={handleEvery}>
         <img src={data.imgUrl} alt='image not found'/>
-        <div className='my-video-btn'>
-            <img src='https://thumbs.dreamstime.com/b/computer-generated-illustration-recycle-bin-icon-isolated-white-background-suitable-logo-delete-icon-button-175612353.jpg' alt='img not' onClick={handleOnOff}/>
+        <div className={`my-video-btn${card}`}>
+            <img src='https://thumbs.dreamstime.com/b/computer-generated-illustration-recycle-bin-icon-isolated-white-background-suitable-logo-delete-icon-button-175612353.jpg' alt='img not'/>
         </div>
         <h3>{data.tittle}</h3>
-    </div>:
-    <Deletecard setToggle={setToggle} data={data}/>
-    }
+    </div>
+    
 
     
     </>
