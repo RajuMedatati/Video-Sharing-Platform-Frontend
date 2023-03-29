@@ -9,7 +9,7 @@ const Search = ()=>{
   const query = useLocation().search;
     console.log(query)
     useEffect(() => {
-        axios.get(`http://localhost:8080/search${query}`)
+        axios.get(`https://video-sharing-backend.onrender.com/search${query}`)
             .then((res) => {
                 setVideos(res.data)
             }).catch((err) => {
